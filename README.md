@@ -6,7 +6,7 @@
 
 ### アプリケーション機能
 - 動画アップロード機能
-- 戦闘シーン抽出機能
+- シーン抽出機能
 - 抽出結果のプレビュー機能
 
 ### モデル学習機能
@@ -55,9 +55,9 @@
 1. トレーニング用のCSVファイルを準備します:
     - ファイルには画像パスとテキストラベルを含める必要があります。
     - 学習データの形式：
-      image_path, text
-      .data\0\train_000.png
-      .data\0\train_001.png
+   image_path, text
+   .data\0\train_000.png
+   .data\0\train_001.png
 
 2. トレーニングを実行します:
     ```
@@ -86,7 +86,7 @@ result_screen.png
 │   └── result.html       # 抽出結果画面
 ├── static/               # 静的ファイル
 │   ├── uploads/          # アップロードされた動画
-│   ├── output/           # 戦闘シーン抽出後の動画
+│   ├── output/           # シーン抽出後の動画
 │   ├── images/           # システムの画面画像
 │   │   ├── extraction_result.png  # 抽出結果画面画像
 │   │   ├── extraction_input.png   # 抽出入力画面画像
