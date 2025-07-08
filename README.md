@@ -77,19 +77,7 @@
 ## ファイル構成
 
 ```
-├── app.py                # Flaskアプリケーションのメインスクリプト
-├── train_openCLIP.py     # OpenCLIPモデルのトレーニングスクリプト
-├── requirements.txt      # 必要なPython依存関係
-├── templates/            # HTMLテンプレート
-│   ├── index.html        # 動画アップロード画面
-│   └── result.html       # 抽出結果画面
-├── static/               # 静的ファイル
-│   ├── uploads/          # アップロードされた動画
-│   ├── output/           # シーン抽出後の動画
-│   ├── images/           # システムの画面画像
-│   │   ├── extraction_result.png  # 抽出結果画面画像
-│   │   ├── extraction_input.png   # 抽出入力画面画像
-└── README.md             # プロジェクト概要
+
 ```
 
 ### 今後の展望
