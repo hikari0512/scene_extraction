@@ -69,13 +69,13 @@
 ## システム画面
 
 ### 入力画面
-[入力画面](images/start_screen.png)
+[入力画面へ移動](images/start_screen.png)
 
 ### 抽出プロセス画面
-[入力画面](images/extraction_screen.png)
+[抽出プロセス画面へ移動](images/extraction_screen.png)
 
 ### 抽出結果画面
-[入力画面](images/result_screen.png)
+[抽出結果画面へ移動](images/result_screen.png)
 
 ## ファイル構成
 
@@ -99,3 +99,7 @@
 2. 学習データセットの拡充。
 3. プロンプトの精度向上。
 4. モデル選定の最適化。
+
+### 留意事項
+本プロジェクトのコードおよびドキュメントは、OpenAIのChatGPTをはじめとする生成AIツールを活用しながら作成しています。
+生成AIを通じてアイデアの整理や実装の支援を受けつつ、自身でも構成や実行・検証・改善を繰り返すことで完成させました。
