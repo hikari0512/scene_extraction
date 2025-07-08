@@ -92,12 +92,6 @@
 ├── app.py                # 主なサーバースクリプト
 ├── requirements.txt      # 必要なPython依存関係
 ├── train_openCLIP.py     # モデル学習用スクリプト
-
-├── static/               # 静的ファイル
-│   ├── uploads/          # アップロードされた動画
-│   ├── output/           # シーン抽出後の動画
-
-
 ```
 
 ### 今後の展望
