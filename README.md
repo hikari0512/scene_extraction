@@ -72,7 +72,7 @@
 [入力画面](images/start_screen.png)
 
 ### 抽出プロセス画面
-[入力画面](images/start_screen.png)
+[入力画面](images/extraction_screen.png)
 
 ### 抽出結果画面
 [入力画面](images/start_screen.png)
