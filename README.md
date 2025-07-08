@@ -90,8 +90,8 @@
     └── result.html       # 抽出結果画面
 ├── README.md             # プロジェクト概要
 ├── app.py                # 主なサーバースクリプト
-├── train_openCLIP.py     # モデル学習用スクリプト
 ├── requirements.txt      # 必要なPython依存関係
+├── train_openCLIP.py     # モデル学習用スクリプト
 
 ├── static/               # 静的ファイル
 │   ├── uploads/          # アップロードされた動画
