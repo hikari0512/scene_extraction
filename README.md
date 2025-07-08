@@ -69,13 +69,13 @@
 ## システム画面
 
 ### 入力画面
-[入力画面へ移動](images/start_screen.png)
+![入力画面へ移動](images/start_screen.png)
 
 ### 抽出プロセス画面
-[抽出プロセス画面へ移動](images/extraction_screen.png)
+![抽出プロセス画面へ移動](images/extraction_screen.png)
 
 ### 抽出結果画面
-[抽出結果画面へ移動](images/result_screen.png)
+![抽出結果画面へ移動](images/result_screen.png)
 
 ## ファイル構成
 
