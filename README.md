@@ -65,7 +65,7 @@
 ### 抽出入力画面
 start_screen.png
 
-###抽出画面
+### 抽出画面
 extraction_screen.png
 
 ### 抽出結果画面
