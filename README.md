@@ -80,21 +80,23 @@
 ## ファイル構成
 
 ```
+│── images/           # システムの画面画像
+    ├──
+    ├── extraction_screen.png  # 抽出途中の画像
+    ├── result_screen.png   # 抽出結果の画像
+    ├── start_screen.png  # 入力画面の画像
+├── templates/            # HTMLテンプレート
+    ├── index.html        # 動画アップロード画面
+    └── result.html       # 抽出結果画面
 ├── README.md             # プロジェクト概要
 ├── app.py                # 主なサーバースクリプト
 ├── train_openCLIP.py     # モデル学習用スクリプト
 ├── requirements.txt      # 必要なPython依存関係
-├── templates/            # HTMLテンプレート
-│   ├── index.html        # 動画アップロード画面
-│   └── result.html       # 抽出結果画面
+
 ├── static/               # 静的ファイル
 │   ├── uploads/          # アップロードされた動画
 │   ├── output/           # シーン抽出後の動画
-│── images/           # システムの画面画像
-    ├──
-│   ├── extraction_screen.png  # 抽出途中の画像
-│   ├── result_screen.png   # 抽出結果の画像
-    ├── start_screen.png  # 入力画面の画像
+
 
 ```
 
