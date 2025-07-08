@@ -69,13 +69,13 @@
 ## システム画面
 
 ### 入力画面
-start_screen.png
+[入力画面](images/start_screen.png)
 
 ### 抽出プロセス画面
-extraction_screen.png
+[入力画面](images/start_screen.png)
 
 ### 抽出結果画面
-result_screen.png
+[入力画面](images/start_screen.png)
 
 ## ファイル構成
 
