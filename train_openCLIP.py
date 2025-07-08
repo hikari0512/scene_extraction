@@ -26,7 +26,7 @@ class ClipPairDataset(Dataset):
         return self.transform(image), tokenizer([text])[0]
 
 # データセットとデータローダーの準備
-dataset = ClipPairDataset(r"C:\Users\KIT_Rental\Desktop\kono\project_001\train_CLIP\train_clip.csv", transform=preprocess)
+dataset = ClipPairDataset(r"train_clip.csv", transform=preprocess)
 loader = DataLoader(dataset, batch_size=5, shuffle=True)
 
 # 学習ループ
@@ -34,7 +34,7 @@ optimizer = torch.optim.AdamW(model.parameters(), lr=1e-5)
 
 model.train()
 best_acc = 0.0
-best_model_path = r"C:\Users\KIT_Rental\Desktop\kono\project_001\train_CLIP\best_openclip.pth"
+best_model_path = r"train_openclip.pth"
 
 for epoch in range(20):
     total_samples = 0
