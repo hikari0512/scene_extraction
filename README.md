@@ -81,7 +81,6 @@
 
 ```
 │── images/           # システムの画面画像
-    ├──
     ├── extraction_screen.png  # 抽出途中の画像
     ├── result_screen.png   # 抽出結果の画像
     ├── start_screen.png  # 入力画面の画像
