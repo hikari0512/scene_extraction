@@ -63,7 +63,7 @@
 ## システム画面
 
 ### 抽出入力画面
-![抽出入力画面](static/images/extraction_input.png)
+![抽出入力画面](start_screen.png)
 
 ### 抽出結果画面
 ![抽出結果画面](result_screen.png)
