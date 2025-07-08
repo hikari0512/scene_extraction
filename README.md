@@ -66,14 +66,13 @@
 
 ## システム画面
 
-### 抽出入力画面
-(start_screen.png)
+![抽出入力画面](start_screen.png)
 
 ### 抽出画面
-(start_screen.png)
+![抽出画面](extraction_screen.png)
 
 ### 抽出結果画面
-(start_screen.png)
+![抽出結果画面](result_screen.png)
 
 ## ファイル構成
 
