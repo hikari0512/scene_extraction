@@ -17,7 +17,7 @@ tokenizer = open_clip.get_tokenizer('RN50')
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 model = model.to(device)
 model.load_state_dict(torch.load(
-    r"model\finetuned_openclip.pth"))
+    r"C:\Users\KIT_Rental\Desktop\kono\project_001\Train_CLIP\finetuned_openclip.pth"))
 model.eval()
 
 class_texts = [
