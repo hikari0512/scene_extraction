@@ -8,7 +8,7 @@ from moviepy.editor import VideoFileClip
 """
 Flaskアプリケーション：VALORANTのシーン自動検出・抽出
 - 動画アップロードを受け取る
-- ファインチューニングしたCLIPモデルでフレームごとに分類
+- ファインチューニングされたCLIPモデルでフレームごとに分類
 - target_class（抽出対象のクラス）のみを抽出
 - 抽出後の動画を出力・表示
 """
@@ -26,8 +26,7 @@ model, _, preprocess = open_clip.create_model_and_transforms('RN50', pretrained=
 tokenizer = open_clip.get_tokenizer('RN50')
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 model = model.to(device)
-model.load_state_dict(torch.load(
-    r"finetuned_openclip.pth"))
+model.load_state_dict(torch.load(r"finetuned_openclip.pth")) # ファインチューニングされたモデルを読み込み
 model.eval()
 
 # 使用するプロンプト
@@ -43,10 +42,12 @@ class_texts = [
 # 抽出対象のクラス
 target_class = 5 # "killed an enemy"
 
+# トップページ（動画アップロードフォーム）を表示
 @app.route('/')
 def index():
     return render_template("index.html")
 
+# アップロードされた動画を保存し、シーン抽出処理後、結果ページを表示
 @app.route('/upload', methods=['POST'])
 def upload():
     file = request.files['video']
@@ -90,14 +91,22 @@ def classify_frame(image):
     return probs.argmax(), probs[target_class]
 
 def extract_combat_scenes(input_path, output_path, threshold):
-    cap = cv2.VideoCapture(input_path)
+    """
+    入力動画から抽出対象のクラス（target_class）のフレーム画像を抽出し、新しい動画として保存する。
+
+    Args: 
+    input_path (str): 入力動画のパス
+    output_path (str): 出力動画の保存先ファイルパス
+    threshold (float): 信頼度の閾値（これを超えたシーンのみ抽出）
+    """
+    cap = cv2.VideoCapture(input_path) # 動画ファイルの読み込み
     total = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
     fps = cap.get(cv2.CAP_PROP_FPS)
     width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
     height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 
     temp_output = output_path.replace('.mp4', '_temp.mp4')
-    writer = cv2.VideoWriter(temp_output, cv2.VideoWriter_fourcc(*'mp4v'), fps, (width, height))
+    writer = cv2.VideoWriter(temp_output, cv2.VideoWriter_fourcc(*'mp4v'), fps, (width, height)) # 一時ファイルの書き出し準備
 
     for _ in range(total):
         ret, frame = cap.read()
@@ -105,6 +114,8 @@ def extract_combat_scenes(input_path, output_path, threshold):
             break
         pil = Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
         pred, conf = classify_frame(pil)
+
+        # 画像を分類し、条件を満たすフレームのみ書き出す
         if pred == target_class and conf > threshold:
             writer.write(frame)
 
@@ -117,5 +128,6 @@ def extract_combat_scenes(input_path, output_path, threshold):
     clip.close()
     os.remove(temp_output)
 
+# Flaskアプリ起動
 if __name__ == '__main__':
     app.run(debug=True)
