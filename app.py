@@ -20,15 +20,18 @@ model.load_state_dict(torch.load(
     r"finetuned_openclip.pth"))
 model.eval()
 
+# 使用するプロンプト
 class_texts = [
-    "holding weapon not shooting at enemy",
-    "preparing during buy phase",
-    "using skill not in combat",
-    "killed by enemy",
-    "shooting at enemy",
-    "killed an enemy"
+    "holding weapon not shooting at enemy", # 武器を構えているが敵を撃っていない
+    "preparing during buy phase", # ラウンド前の武器購入フェーズ中
+    "using skill not in combat", # キャラクターのスキルを使用している
+    "killed by enemy", # 敵に倒された
+    "shooting at enemy", # 敵を撃っている
+    "killed an enemy" # 敵を倒した
 ]
-target_class = 5
+
+# 抽出対象のクラス
+target_class = 5 # "killed an enemy"
 
 @app.route('/')
 def index():
@@ -54,9 +57,20 @@ def upload():
     )
 
 def classify_frame(image):
+    """
+    1フレームの画像に対してCLIPモデルで分類
+    クラス予測とクラスの信頼度を返す関数
+
+    Args:
+        image (PIL.Image): 分類対象の画像
+        
+    Returns:
+        tuble:（予測クラスID, スコア）
+    """
     image_input = preprocess(image).unsqueeze(0).to(device)
     text_inputs = tokenizer(class_texts).to(device)
     with torch.no_grad():
+        # 画像とテキストをそれぞれエンコード
         image_features = model.encode_image(image_input)
         text_features = model.encode_text(text_inputs)
         image_features /= image_features.norm(dim=-1, keepdim=True)
