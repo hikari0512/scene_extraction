@@ -5,13 +5,23 @@ from werkzeug.utils import secure_filename
 import open_clip
 from moviepy.editor import VideoFileClip
 
+"""
+Flaskアプリケーション：VALORANTのシーン自動検出・抽出
+- 動画アップロードを受け取る
+- ファインチューニングしたCLIPモデルでフレームごとに分類
+- target_class（抽出対象のクラス）のみを抽出
+- 抽出後の動画を出力・表示
+"""
+
 app = Flask(__name__)
 
+# アップロードされた動画と抽出後の動画を保存するディレクトリの作成
 UPLOAD_FOLDER = os.path.join(app.root_path, 'static', 'uploads')
 OUTPUT_FOLDER = os.path.join(app.root_path, 'static', 'output')
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 
+# CLIPモデル（ResNet50）と前処理、トークナイザーの読み込み
 model, _, preprocess = open_clip.create_model_and_transforms('RN50', pretrained='openai')
 tokenizer = open_clip.get_tokenizer('RN50')
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
