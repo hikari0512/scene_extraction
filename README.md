@@ -65,7 +65,6 @@
         data/1/train_000.png,"shooting at enemy"
         data/1/train_001.png,"killed an enemy"
         data/1/train_002.png,"killed by enemy"
-
       ```
    - 各行が画像とそれに対応する自然言語プロンプトを紐づけており、CLIPモデルのファインチューニングに利用されます。
 
