@@ -87,6 +87,15 @@
 ## ファイル構成
 
 ```
+|── data/
+    ├── 0/ 　　　　　#非戦闘シーン
+        ├── train_000.png 
+        ├── train_001.png
+        ├── train_002.png 
+    ├── 1/          #戦闘シーン
+        ├── train_000.png
+        ├── train_001.png
+        ├── train_002.png
 │── images/           # システムの画面画像
     ├── extraction_screen.png  # 抽出途中の画像
     ├── result_screen.png   # 抽出結果の画像
