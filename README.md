@@ -57,9 +57,14 @@
     - ファイルには画像パスとテキストラベルを含める必要があります。
     - 学習データの例：
       ```
-      image_path, text
-      .data\0\train_000.png
-      .data\0\train_001.png
+      image_path,text
+        data/0/train_000.png,"holding weapon not shooting at enemy"
+        data/0/train_001.png,"preparing during buy phase"
+        data/0/train_002.png,"using skill not in combat"
+        data/1/train_100.png,"shooting at enemy"
+        data/1/train_101.png,"killed an enemy"
+        data/1/train_102.png,"killed by enemy"
+
       ```
 
 2. 学習を開始します:
