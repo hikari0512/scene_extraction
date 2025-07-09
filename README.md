@@ -54,10 +54,11 @@
 
 ### モデル学習を行う場合
 1. トレーニング用のCSVファイルを準備します:
-    - ファイルには画像パスとテキストラベルを含める必要があります。
-    - 学習データの例：
+    - ファイルには画像ファイルのパス（相対パス）と、各画像に対応するテキストラベル（プロンプト）を含める必要があります。
+    - 画像はdata/0（非戦闘シーン）、data/1（戦闘シーン）など、クラスごとにフォルダ分けして保存されます。
+    - 学習データの例（train_clip.csv）：
       ```
-      image_path,text
+        image_path,text
         data/0/train_000.png,"holding weapon not shooting at enemy"
         data/0/train_001.png,"preparing during buy phase"
         data/0/train_002.png,"using skill not in combat"
