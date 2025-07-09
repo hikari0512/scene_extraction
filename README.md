@@ -62,9 +62,9 @@
         data/0/train_000.png,"holding weapon not shooting at enemy"
         data/0/train_001.png,"preparing during buy phase"
         data/0/train_002.png,"using skill not in combat"
-        data/1/train_100.png,"shooting at enemy"
-        data/1/train_101.png,"killed an enemy"
-        data/1/train_102.png,"killed by enemy"
+        data/1/train_000.png,"shooting at enemy"
+        data/1/train_001.png,"killed an enemy"
+        data/1/train_002.png,"killed by enemy"
 
       ```
    - 各行が画像とそれに対応する自然言語プロンプトを紐づけており、CLIPモデルのファインチューニングに利用されます。
