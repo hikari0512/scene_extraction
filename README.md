@@ -105,7 +105,7 @@
 ## ファイル構成
 
 ```
-|── data/
+|── data/  # 学習用データの例
     ├── 0/ # 非戦闘シーン
         ├── train_000.png 
         ├── train_001.png
@@ -124,6 +124,7 @@
 ├── README.md             # プロジェクト概要
 ├── app.py                # 主なサーバースクリプト
 ├── requirements.txt      # 必要なPython依存関係
+├── train_clip.csv        #学習用データセットの例
 ├── train_openCLIP.py     # モデル学習用スクリプト
 ```
 
